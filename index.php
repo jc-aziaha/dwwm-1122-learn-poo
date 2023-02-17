@@ -1,302 +1,120 @@
 <?php
 
-
-    class User
+    class Robot
     {
-        private $firstName;
-        private $lastName;
+        private $nom;
+        private $couleur;
+        private $nbreBras = 2;
+        private $nbreRoues;
 
-        public function __construct($firstName, $lastName)
+        public function __construct($nouveau_nom, $nouvelle_couleur, $nouveau_nbre_roues = 5)
         {
-            $this->firstName = $firstName;
-            $this->lastName = $lastName;
+            $this->nom     = $nouveau_nom;
+            $this->couleur = $nouvelle_couleur;
+            $this->nbreRoues = $nouveau_nbre_roues;
         }
 
-        public function sePresenter()
+        public function getNom()
         {
-            echo "Hello! Je m'appelle $this->firstName $this->lastName</br>";
+            return $this->nom;
+        }
+
+        public function setNom($nouveau_nom)
+        {
+            $this->nom = $nouveau_nom;
+        }
+
+        public function getCouleur()
+        {
+            return $this->couleur;
+        }
+
+        public function setCouleur($nouvelle_couleur)
+        {
+            $this->couleur = $nouvelle_couleur;
+        }
+
+        public function getNbreBras()
+        {
+            return $this->nbreBras;
+        }
+
+        public function setNbreBras($nouveau_nbre_bras)
+        {
+            $this->nbreBras = $nouveau_nbre_bras;
+        }
+
+        public function getNbreRoues()
+        {
+            return $this->nbreRoues;
+        }
+
+        public function setNbreRoues($nouveau_nbre_roues)
+        {
+            $this->nbreRoues = $nouveau_nbre_roues;
+        }
+
+        public function initialiser()
+        {
+            echo "Initialisation en cours<br/>";
+        }
+
+        public function faireLeMenage()
+        {
+            echo "Cool! C'est parti<br/>";
+        }
+
+        public function parler()
+        {
+            echo "Bonjour, je m'appelle $this->nom<br/>";
+        }
+
+        public function coder($langage)
+        {
+            echo "Faisons un peu de $langage<br/>";
         }
     }
 
-    $user0 = new User("jc", "AZIAHA");
-    $user1 = new User("Mickey", "Mouse");
-    $user2 = new User("Mimi", "Mouse");
+    $robot0 = new Robot("Alexa", "Noire", 10);
+    $robot1 = new Robot("Siri", "Rouge", 17);
+    $robot2 = new Robot("Google", "Bleue", 23);
+    $robot3 = new Robot("ChatGPT", "blanche");
 
-    $user0->sePresenter();
-    $user1->sePresenter();
-    $user2->sePresenter();
-
-
-    // class Vehicule
-    // {
-    //     private $marque;
-    //     private $model;
-    //     private $nitro;
-
-    //     public static function rouler()
-    //     {
-    //         echo "Le véhicule roule. </br>";
-    //     }
-    // }
-
-    // Vehicule::rouler();
-
-    // $v0 = new Vehicule();
-    // $v0->rouler();
-
-
-
-
-    // // ORM
-    // class User
-    // {
-    //     private $firstName;
-    //     private $lastName;
-    //     private $email;
-    //     private $password;
-    //     private $createdAt;
-    //     private $updatedAt;
-
-    //     public function getFirstName()
-    //     {
-    //         return $this->firstName;
-    //     }
-
-    //     public function setFirstName($firstName)
-    //     {
-    //         $this->firstName = $firstName;
-    //     }
-
-    //     public function getLastName()
-    //     {
-    //         return $this->lastName;
-    //     }
-
-    //     public function setLastName($lastName)
-    //     {
-    //         $this->lastName = $lastName;
-    //     }
-
-    //     public function getEmail() 
-    //     {
-    //         return $this->email;
-    //     }
-
-    //     public function setEmail($email)
-    //     {
-    //         $this->email = $email;
-    //     }
-
-    //     public function getPassword()
-    //     {
-    //         return $this->password;
-    //     }
-
-    //     public function setPassword($password)
-    //     {
-    //         $this->password = $password;
-    //     }
-
-    //     public function getCreatedAt()
-    //     {
-    //         return $this->createdAt;
-    //     }
-
-    //     public function setCreatedAt($createdAt)
-    //     {
-    //         $this->createdAt = $createdAt;
-    //     }
-
-    //     public function getUpdatedAt()
-    //     {
-    //         return $this->updatedAt;
-    //     }
-
-    //     public function setUpdatedAt($updatedAt)
-    //     {
-    //         $this->updatedAt = $updatedAt;
-    //     }
-
-
-
-
-    // }
-
-
-    // class User
-    // {
-    //     private $firstName;
-    //     private $lastName;
-
-    //     public function __construct($new_first_name, $new_last_name)
-    //     {
-    //         $this->firstName = $new_first_name;
-    //         $this->lastName  = $new_last_name;
-    //     }
-
-    //     // L'accesseur du prénom
-    //     public function getFirstName()
-    //     {
-    //         return $this->firstName;
-    //     }
-
-    //     // L'accesseur du nom
-    //     public function getLastName()
-    //     {
-    //         return $this->lastName;
-    //     }
-
-    //     // Le mutateur du prénom
-    //     public function setFirstName($new_first_name)
-    //     {
-    //         $this->firstName = $new_first_name;
-    //     }
-
-    //     // Le mutateur du nom
-    //     public function setLastName($new_last_name)
-    //     {
-    //         $this->lastName = $new_last_name;
-    //     }
-
-    // }
-
-    // $user0 = new User("Mickey", "Mouse");
-    // $user1 = new User("Mimi",   "Mouse");
-
-    // $user0->setFirstName("hello");
-    // echo $user0->getFirstName() . "<br/>";
-
-    // var_dump($user0);
-
-    // $user0->first_name;
-
-
-    // class Vehicule
-    // {
-    //     private $marque = "Audi";
-    //     private $couleur = "bleue";
-
-    //     // Accesseur de la marque
-    //     public function getMarque()
-    //     {
-    //         return $this->marque;
-    //     }
-
-    //     // Accesseur de la couleur
-    //     public function getCouleur()
-    //     {
-    //         return $this->couleur;
-    //     }
-
-    //     // Mutateur de la marque
-    //     public function setMarque($nouvelle_marque)
-    //     {
-    //         $this->marque = $nouvelle_marque;
-    //     }
-
-    //     // Mutateur de la couleur
-    //     public function setCouleur($nouvelle_couleur)
-    //     {
-    //         $this->couleur = $nouvelle_couleur;
-    //     }
-    // }
-
-    // $vehicule_de_jb = new Vehicule;
-    // $vehicule_de_jc = new Vehicule;
-
-    // echo $vehicule_de_jb->getMarque() . "<br/>"; // Audi
-    // echo $vehicule_de_jc->getMarque() . "<br/>"; // Audi
-    
-    // $vehicule_de_jb->setCouleur("blanche");
-    
-    // echo $vehicule_de_jb->getMarque() . "<br/>"; // Audi
-    // echo $vehicule_de_jb->getCouleur() . "<br/>"; // blanche
-    // echo $vehicule_de_jc->getCouleur() . "<br/>"; // bleue
-
-    // $v0 = new Vehicule;
-    // echo $v0->getMarque() . "<br/>";
-    // echo $v0->getCouleur() . "<br/>";
-
-
-    // class User
-    // {
-    //     public $first_name;
-    //     public $last_name;
-    //     public $email;
-    //     public $age;
-    //     public $phone;
-    //     public $comment;
-
-    //     public function saluer()
-    //     {
-
-    //     }
-
-    //     public function envoyerMessage()
-    //     {
-
-    //     }
-    // }
+    echo "Le robot0 a " . $robot0->getNbreRoues() . " nombres de roues<br/>";
+    echo "Le robot1 a " . $robot1->getNbreRoues() . " nombres de roues<br/>";
+    echo "Le robot2 a " . $robot2->getNbreRoues() . " nombres de roues<br/>";
+    echo "Le robot3 a " . $robot3->getNbreRoues() . " nombres de roues<br/>";
 
     
-
-    // class Vehicule
-    // {
-    //     public $marque = "Audi";
-    //     protected $model  = "A7";
-    //     private $puissance  = 100;
-
-    //     public function demarrer()
-    //     {
-    //         echo "Vroum! Le véhicule démarre.";
-    //     }
-        
-    //     protected function rouler()
-    //     {
-    //         echo "Le véhicule roule.";
-    //     }
-
-    // }
-
-    // $v0 = new Vehicule;
-
-    // $v0->rouler();
-    // echo $v0->puissance . "<br>";
-    // echo $v0->model . "<br>";
-    // echo $v0->marque . "<br>";
-
+    // $robot0->parler();
+    // $robot1->parler();
+    // $robot2->parler();
     
+    // $robot2->coder("kotlin");
 
+    // $robot0->setNom("ChatGPT");
+    // echo $robot0->getNom();
 
+    // $robot0->setNbreRoues(4);
+    // $robot1->setNbreRoues(6);
+    // $robot2->setNbreRoues(8);
 
-    
+    // $tab_robots = [
+    //     0 => $robot0,
+    //     1 => $robot1,
+    //     2 => $robot2,
+    // ];
 
+    // // var_dump($tab_robots); die();
 
-    // class Stylo
+    // foreach ($tab_robots as $robot) 
     // {
-
+    //     $robot->setNbreRoues(5);
     // }
 
-
-    // La classe dun nom de Robot
-    // ou la maquette Robot
-    // class Robot
-    // {
-
-    // }
-    // $robot0 = new Robot;
-    // $robot1 = new Robot;
-    // $robot2 = new Robot;
+    // var_dump($tab_robots); die();
 
 
-    // class User
-    // {
 
-    // }
-    // $jb = new User;
-    // $jc = new User;
-    // $jf = new User;
-    // $jm = new User;
-    // $jp = new User;
 
 
